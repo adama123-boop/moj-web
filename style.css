@@ -1,0 +1,75 @@
+body {
+  background-color: red;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.card {
+  width: 300px;
+  height: 300px;
+  padding: 20px;
+  background: rgba(198, 198, 198, 0.34);
+  border-radius: 8px;
+  backdrop-filter: blur(5px);
+  border-bottom: 3px solid rgba(255, 255, 255, 0.440);
+  border-left: 2px rgba(255, 255, 255, 0.545) outset;
+  box-shadow: -40px 50px 30px rgba(0, 0, 0, 0.280);
+  transform: skewX(10deg);
+  transition: .4s;
+  overflow: hidden;
+  color: white;
+  text-align: center;
+  position: relative;
+}
+
+.dog {
+  font-size: 50px;
+  cursor: pointer;
+  position: absolute;
+  top: 25%; /* Teraz je ešte o riadok nižšie */
+  left: 50%;
+  transform: translateX(-50%);
+  transition: transform 0.3s ease;
+}
+
+
+/* Animácia psa pri kliknutí */
+.dog.clicked {
+  transform: translateX(-50%) rotate(10deg);
+}
+
+.slime {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background-color: #00f; /* Modrá farba pre sliny */
+  border-radius: 50%;
+  opacity: 0.8;
+  animation: slimeMove 1s ease-out forwards;
+}
+
+@keyframes slimeMove {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0);
+    opacity: 0;
+  }
+}
+
+/* Sliny vychádzajúce zo psa v rôznych smeroch */
+@keyframes slimeMove {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0);
+    opacity: 0;
+  }
+}
